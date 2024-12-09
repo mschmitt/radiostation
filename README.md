@@ -6,7 +6,7 @@ I'm working on a special-interest streaming radio station. This will affect the 
 
 `mschmitt/radiostation-track-prep`
 
-Happens interactively on a workstation:
+Interactively on a workstation:
 
 * Manual:
   * Save music, create folder on Nextcloud
@@ -18,24 +18,26 @@ Happens interactively on a workstation:
 
 ## Playlist Preparation (Status: Nothing to do)
 
-Interactively in Nextclous Music:
+Interactively in Nextcloud Music:
 
 * Listen, add tracks to the station playlist
-* Nextcloud Music is the pricipal location of tracks and playlist
+* Nextcloud Music is the principal location of tracks (in browsable/playable form) and for playlist maintenance
 
 ## Playlist Export (Status: Work in progress; develop at home and move to housed server)
 
 `mschmitt/radiostation-playlist-prep`
 
-Happens where Liquidsoap runs and outputs to Icecast:
+Runs in the same place as Liquidsoap:
 
 * Scripted: (all work in progress, working title: `nextcloud.py`)
+  * Todo: configuration file with paths, URLs etc.
   * Use the subsonic API to export the station playlist from Nextcloud
   * Download each track to a holding directory, slugify/normalize filenames
   * Write playlist file
   * Signal to Liquidsoap that the playlist was updated (UNIX socket or TCP socket? Permissions?)
+* Yet unclear whether this will run manually (triggered how?) or as a systemd timer, or both
  
-## Back-end Delivery (Status: Move from home to housed server)
+## Back-end Delivery (Status: complete, move from home to housed server)
 
 `mschmitt/radiostation-liquidsoap`
 
@@ -43,6 +45,7 @@ Happens where Liquidsoap runs and outputs to Icecast:
     * Act as the Icecast source (complete, `station.liq`)
     * Embed Metadata into Stream on track changes (complete)
     * Example `vars.liq` in repository
+    * Example systemd unit
  
 ## Front-end Delivery (Status: complete)
 
@@ -56,4 +59,6 @@ Icecast has very little to configure, most of which will be done manually.
   * Icecast:
     * Hook stealing of the MDomain SSL certificate from Apache into Icecast startup (complete, `/etc/systemd/system/icecast2.service.d/override.conf`)
   * Probe Metadata from Stream and save the JSON object for insertion into the player page (complete, `metadata-prober`)
+    * Example systemd unit
+* All of this will be published non-anonymized
 
