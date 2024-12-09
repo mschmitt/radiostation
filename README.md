@@ -23,7 +23,7 @@ Interactively in Nextcloud Music:
 * Listen, add tracks to the station playlist
 * Nextcloud Music is the principal location of tracks (in browsable/playable form) and for playlist maintenance
 
-## Playlist Export (Status: Work in progress; develop at home and move to housed server)
+## Playlist Export (Status: Work in progress; develop at home and move to colocation)
 
 `mschmitt/radiostation-playlist-prep`
 
