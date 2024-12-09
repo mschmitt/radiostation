@@ -2,7 +2,7 @@
 
 I'm working on a special-interest streaming radio station. This will affect the following (not all yet created) repositories, modeling the workflow from music download to delivery.
 
-## Download and Cleanup (Status: complete)
+## Download and Cleanup
 
 https://github.com/mschmitt/radiostation-track-prep
 
@@ -15,7 +15,7 @@ Interactively on a workstation:
 * Scripted:
   * Add our local tags (Creative Commons notice, license, proof of license) (complete, `embed-proof-*.sh`)
     
-## Playlist Preparation (Status: Nothing to do)
+## Playlist Preparation
 
 Interactively in Nextcloud Music:
 
