@@ -30,10 +30,10 @@ https://github.com/mschmitt/radiostation-exporter
 
 Runs where Liquidsoap runs:
 
-* Use the subsonic API to export the station playlist from Nextcloud
+* Use the subsonic API to export the station playlist from Nextcloud Music
 * Download each track to a holding directory, slugify/normalize filenames
 * Write playlist file
-* Signal to Liquidsoap that the playlist was updated)
+* Signal to Liquidsoap that the playlist was updated
 * Yet unclear whether this will run manually forever or as a systemd timer, or both
 
 ## Back-end Delivery
