@@ -2,9 +2,9 @@
 
 I'm working on a special-interest streaming radio station. This will affect the following (not yet created) repositories, modeling the workflow from music download to delivery.
 
-## Download and Cleanup (Status: almost-complete, automatic QA to be done)
+## Download and Cleanup (Status: complete)
 
-`mschmitt/radiostation-track-prep`
+https://github.com/mschmitt/radiostation-track-prep
 
 Interactively on a workstation:
 
@@ -14,8 +14,7 @@ Interactively on a workstation:
   * Screenshot the download site with license info to `proof.png` in the album folder.
 * Scripted:
   * Add our local tags (Creative Commons notice, license, proof of license) (complete, `embed-proof-*.sh`)
-  * Some QA to help avoid unclean and missing tags
-
+    
 ## Playlist Preparation (Status: Nothing to do)
 
 Interactively in Nextcloud Music:
