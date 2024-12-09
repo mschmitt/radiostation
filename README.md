@@ -22,11 +22,11 @@ Interactively in Nextcloud Music:
 * Listen, add tracks to the station playlist
 * Nextcloud Music is the principal location of tracks (in browsable/playable form) and for playlist maintenance
 
-## Playlist Export (Status: Work in progress; develop at home and move to colocation)
+## Playlist Export
 
-`mschmitt/radiostation-playlist-prep`
+https://github.com/mschmitt/radiostation-export
 
-Runs in the same place as Liquidsoap:
+Runs where Liquidsoap runs:
 
 * Scripted: (all work in progress, working title: `nextcloud.py`)
   * Todo: configuration file with paths, URLs etc.
@@ -36,21 +36,20 @@ Runs in the same place as Liquidsoap:
   * Signal to Liquidsoap that the playlist was updated (UNIX socket or TCP socket? Permissions?)
 * Yet unclear whether this will run manually (triggered how?) or as a systemd timer, or both
  
-## Back-end Delivery (Status: complete, move from home to housed server)
+## Back-end Delivery
 
-`mschmitt/radiostation-liquidsoap`
+https://github.com/mschmitt/radiostation-liquidsoap
 
   * Liquidsoap:
     * Act as the Icecast source (complete, `station.liq`)
     * Embed Metadata into Stream on track changes (complete)
     * Example `vars.liq` in repository
-    * Example systemd unit
  
-## Front-end Delivery (Status: complete)
+## Front-end Delivery
 
-`mschmitt/radiostation-icecast-delivery`
+https://github.com/mschmitt/radiostation-icecast-delivery
 
-Icecast has very little to configure, most of which will be done manually.
+Icecast has very little to configure, most of which will be done manually. This will be a documentation-only repository.
 
 * Manual:
   * Webpage with player and AJAX thingy for metadata. (complete, `index.html` etc.)
@@ -58,6 +57,3 @@ Icecast has very little to configure, most of which will be done manually.
   * Icecast:
     * Hook stealing of the MDomain SSL certificate from Apache into Icecast startup (complete, `/etc/systemd/system/icecast2.service.d/override.conf`)
   * Probe Metadata from Stream and save the JSON object for insertion into the player page (complete, `metadata-prober`)
-    * Example systemd unit
-* All of this will be published non-anonymized
-
