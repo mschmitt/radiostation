@@ -24,7 +24,7 @@ Interactively in Nextcloud Music:
 
 ## Playlist Export
 
-https://github.com/mschmitt/radiostation-export
+https://github.com/mschmitt/radiostation-exporter
 
 Runs where Liquidsoap runs:
 
