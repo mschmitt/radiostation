@@ -1,6 +1,6 @@
 # Personal Radio Station (Meta Repository)
 
-I'm working on a special-interest streaming radio station. This will affect the following (not yet created) repositories, modeling the workflow from music download to delivery.
+I'm working on a special-interest streaming radio station. This will affect the following (not all yet created) repositories, modeling the workflow from music download to delivery.
 
 ## Download and Cleanup (Status: complete)
 
