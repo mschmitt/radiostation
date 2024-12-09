@@ -13,7 +13,7 @@ Happens interactively on a workstation:
   * Ensure proper tagging
   * Screenshot the download site with license info to `proof.png` in the album folder.
 * Scripted:
-  * Add our local tags (Creative Commons notice, license, proof of license)
+  * Add our local tags (Creative Commons notice, license, proof of license) (complete, `embed-proof-*.sh`)
   * Some QA to help avoid unclean and missing tags
 
 ## Playlist Preparation
@@ -29,16 +29,22 @@ Interactively in Nextclous Music:
 
 Happens where Liquidsoap runs and outputs to Icecast:
 
-* Scripted:
+* Scripted: (all work in progress, working title: `nextcloud.py`)
   * Use the subsonic API to export the station playlist from Nextcloud
   * Download each track to a holding directory, slugify/normalize filenames
   * Write playlist file
   * Signal to Liquidsoap that the playlist was updated (UNIX socket or TCP socket? Permissions?)
-  * Liquidsoap:
-    * Act as the Icecast source
-    * Embed Metadata into Stream on track changes
  
-## Delivery
+## Back-end Delivery
+
+`mschmitt/radiostation-liquidsoap`
+
+  * Liquidsoap:
+    * Act as the Icecast source (complete, `station.liq`)
+    * Embed Metadata into Stream on track changes (complete)
+    * Example `vars.liq` in repository
+ 
+## Front-end Delivery
 
 `mschmitt/radiostation-icecast-delivery`
 
@@ -46,6 +52,5 @@ Icecast has very little to configure, most of which will be done manually.
 
 * Sripted:
   * Icecast:
-    * Hook stealing of the MDomain SSL certificate from Apache into Icecast startup
-  * Other:
-    * Probe Metadata from Stream and save the JSON object for insertion into the player page
+    * Hook stealing of the MDomain SSL certificate from Apache into Icecast startup (complete, `/etc/systemd/system/icecast2.service.d/override.conf`)
+  * Probe Metadata from Stream and save the JSON object for insertion into the player page (complete, `metadata-prober`)
