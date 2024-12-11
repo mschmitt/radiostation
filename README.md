@@ -36,7 +36,7 @@ Runs where Liquidsoap runs:
 * Signal to Liquidsoap that the playlist was updated
 * Yet unclear whether this will run manually forever or as a systemd timer, or both
 
-## Back-end Delivery
+## Liquidsoap
 
 https://github.com/mschmitt/radiostation-liquidsoap
 
@@ -44,14 +44,13 @@ https://github.com/mschmitt/radiostation-liquidsoap
     * Acts as the Icecast source
     * Embeds Metadata into Stream on track changes
  
-## Front-end Delivery
+## Delivery
 
-https://github.com/mschmitt/radiostation-icecast-delivery
+https://github.com/mschmitt/radiostation-delivery, https://github.com/mschmitt/radiostation-website
 
 * Manually:
-  * Webpage with player and AJAX thingy for metadata
   * Icecast configuration (credentials, HTTPS)
 * Scripted:
-  * Icecast:
-    * Icecast systemd unit modified (by default drop-in) to steal the MDomain SSL certificate from Apache
+  * Webpage with player and AJAX thingy for metadata
+  * Icecast systemd unit modified (by default drop-in) to steal the MDomain SSL certificate from Apache
   * Periodically probe Metadata from Stream and save the JSON object for insertion into the player page
