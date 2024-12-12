@@ -9,7 +9,7 @@ https://github.com/mschmitt/radiostation-track-prep
 Interactively on a workstation:
 
 * Manually:
-  * Save music, create folder on Nextcloud (*/Streamsafe-Radio*)
+  * Save music, create folder on Nextcloud
   * Ensure proper tagging
   * Screenshot the download site with license info to `proof.png` in the album folder.
 * Scripted:
