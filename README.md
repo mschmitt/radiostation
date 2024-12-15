@@ -37,6 +37,7 @@ Runs where Liquidsoap runs:
 * Signal to Liquidsoap that the playlist was updated
 * Yet unclear whether this will run manually forever or as a systemd timer, or both
 * **TODO**: Automatic quality control (Metadata check) for each individual track.
+* **TODO**: Purge unused tracks from the holding directory.
 
 ## Liquidsoap
 
