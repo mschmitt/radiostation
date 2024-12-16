@@ -46,6 +46,7 @@ https://github.com/mschmitt/radiostation-liquidsoap
   * Liquidsoap:
     * Acts as the Icecast source
     * Embeds Metadata into Stream on track changes
+    * **TODO**: Liquidsoap's randomness doesn't feel sufficiently random. Maybe hard-randomize the playlist on every export.
  
 ## Delivery
 
