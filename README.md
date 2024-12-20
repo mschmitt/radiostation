@@ -12,6 +12,7 @@ Interactively on a workstation:
   * Save music, create folder on Nextcloud
   * Ensure proper tagging
   * Screenshot the download site with license info to `proof.png` and save the download link to `url.txt` in the album folder.
+  * For Jamendo, which doesn't display a summary of album licensing, there's `jamendo_album_summary.py`.
 * Scripted:
   * Add our local tags (Creative Commons notice, license, proof of license, download url.)
 * **FIXME**: Started using extended attributes to mark files as done, but xattrs aren't synced through Nextcloud. Find another way.
