@@ -15,7 +15,6 @@ Interactively on a workstation:
   * For Jamendo, which doesn't display a summary of album licensing, there's `jamendo_album_summary.py`.
 * Scripted:
   * Add our local tags (Creative Commons notice, license, proof of license, download url.)
-* **FIXME**: Started using extended attributes to mark files as done, but xattrs aren't synced through Nextcloud. Find another way.
 
 Note the station does not play directly out of Nextcloud, but Nextcloud and Nextcloud Music are used for track and playlist management only.
     
