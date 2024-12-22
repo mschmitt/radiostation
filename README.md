@@ -39,6 +39,7 @@ Runs where Liquidsoap runs:
 * Automatic quality control (Metadata check) for each track.
 * Write playlist file
 * Purge unused tracks from the holding directory (this also affects tracks with bad QA)
+* Calculate replay gain (`collectiongain`)
 * Signal to Liquidsoap that the playlist was updated
 * Yet unclear whether this will run manually forever or as a systemd timer, or both
 
@@ -49,7 +50,7 @@ https://github.com/mschmitt/radiostation-liquidsoap
   * Liquidsoap:
     * Acts as the Icecast source
     * Embeds Metadata into Stream on track changes
-    * **TODO**: Liquidsoap's randomness doesn't feel sufficiently random. Maybe hard-randomize the playlist on every export?
+    * **TODO**: Liquidsoap's randomness doesn't feel sufficiently random. Maybe hard-randomize the playlist on every export? But only if we can define and implement criteria for what we consider "random enough".
  
 ## Delivery
 
