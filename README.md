@@ -16,7 +16,6 @@ Interactively on a workstation:
 * Scripted:
   * Add our local tags (Creative Commons notice, license, proof of license, download url.)
 * **FIXME**: Started using extended attributes to mark files as done, but xattrs aren't synced through Nextcloud. Find another way.
-* **TODO**: Automatic quality control (Metadata check) for each individual track.
 
 Note the station does not play directly out of Nextcloud, but Nextcloud and Nextcloud Music are used for track and playlist management only.
     
@@ -37,8 +36,9 @@ Runs where Liquidsoap runs:
 
 * Use the subsonic API to export the station playlist from Nextcloud Music
 * Download each track to a holding directory, slugify/normalize filenames
+* Automatic quality control (Metadata check) for each track.
 * Write playlist file
-* Purge unused tracks from the holding directory.
+* Purge unused tracks from the holding directory (this also affects tracks with bad QA)
 * Signal to Liquidsoap that the playlist was updated
 * Yet unclear whether this will run manually forever or as a systemd timer, or both
 
