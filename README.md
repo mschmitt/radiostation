@@ -66,18 +66,19 @@ https://github.com/mschmitt/radiostation-delivery, https://github.com/mschmitt/r
 
 ## TODO / DRAFT: Scalability / independence from my shared infrastructure
 
-* Classic distributed
-  * Central server (*icecast.${domain}*) acts as the hidden icecast master (playlist export, quality control, Liquidsoap)
-  * Provides stream only to icecast frontend relays
-  * *${domain}* served by relays
+* Notes on resource usage:
+  * Bandwidth: 112 kbps per listener = 100 Mbps for almost 1000 listeners
+  * Storage: 1.5 GB for 200 MP3s = 8 GB for 1000 MP3s
+  * CPU: Less than 1 core for Vorbis encoding
+  * RAM: Unclear
+
+* An architecture that has a reliable principal backend but disposable frontends:
+  * *${domain}* served by relays only, former single server turns into a hidden principal server, *radio.${domain}*
   * Relays are semi-disposable VPSes and connect on demand
-  * Web server on each relay, pulling metadata from... Not sure where
-  * All relays stream in sync
-  * Round-Robin DNS (let's not prematurely optimize for this)
-  * Don't care if you stream from a different server in the round robin than the one giving you the metadata, as the relays are in sync
+  * Web server on each relay reverse-proxies the entire root hierarchy to the main server
   * Tasks to automate on relay:
     * Install dependencies (webserver, icecast)
-    * Configure webserver for Letsencrypt (read back up on how I previously did this in a DNS Round Robin - but let's not prematurely optimize for this)
+    * Configure webserver for Letsencrypt and reverse proxy (read back up on how I previously did this in a DNS Round Robin - but let's not prematurely optimize for this)
     * Configure webserver cert stealing for icecast
-    * Configure icecast (passwords, relay)
+    * Configure icecast (passwords, listener, certificate, relay)
     * Prometheus
