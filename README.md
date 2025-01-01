@@ -63,3 +63,21 @@ https://github.com/mschmitt/radiostation-delivery, https://github.com/mschmitt/r
   * Icecast systemd unit modified (by default drop-in) to steal the MDomain SSL certificate from Apache
   * Periodically probe Metadata from Stream and save the JSON object for insertion into the player page.
     * **FIXME**: Emty metadata object is *not* a safe fallback. (See above re. `he.js`)
+
+## TODO / DRAFT: Scalability / independence from my shared infrastructure
+
+* Classic distributed
+  * Central server (*icecast.${domain}*) acts as the hidden icecast master (playlist export, quality control, Liquidsoap)
+  * Provides stream only to icecast frontend relays
+  * *${domain}* served by relays
+  * Relays are semi-disposable VPSes and connect on demand
+  * Web server on each relay, pulling metadata from... Not sure where
+  * All relays stream in sync
+  * Round-Robin DNS (let's not prematurely optimize for this)
+  * Don't care if you stream from a different server in the round robin than the one giving you the metadata, as the relays are in sync
+  * Tasks to automate on relay:
+    * Install dependencies (webserver, icecast)
+    * Configure webserver for Letsencrypt (read back up on how I previously did this in a DNS Round Robin - but let's not prematurely optimize for this)
+    * Configure webserver cert stealing for icecast
+    * Configure icecast (passwords, relay)
+    * Prometheus
