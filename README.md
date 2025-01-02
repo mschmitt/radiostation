@@ -78,6 +78,7 @@ https://github.com/mschmitt/radiostation-delivery, https://github.com/mschmitt/r
   * Web server on each relay reverse-proxies the entire root hierarchy to the main server
   * Tasks to automate on relay:
     * Install dependencies (webserver, icecast)
+    * Supress Logging in Webserver and icecast
     * Configure webserver for Letsencrypt and reverse proxy (read back up on how I previously did this in a DNS Round Robin - but let's not prematurely optimize for this)
     * Configure webserver cert stealing for icecast
     * Configure icecast (passwords, listener, certificate, relay)
