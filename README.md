@@ -71,18 +71,11 @@ https://github.com/mschmitt/radiostation-cdn
 * Notes on resource usage:
   * Bandwidth: 112 kbps per listener = 100 Mbps for almost 1000 listeners
   * Storage: 1.5 GB for 200 MP3s = 8 GB for 1000 MP3s
-  * CPU: Less than 1 core for Vorbis encoding
+  * CPU: Less than 1 core for Vorbis transcoding
   * RAM: Unclear
 
 * Relay architecture
-  * *${domain}* served by icecast relays only, former single server turns into a hidden icecast principal server, *radio.${domain}*
+  * *${domain}* served by icecast relays only, former single server turns into a hidden icecast main server, *radio.${domain}*
   * Relays are semi-disposable VPSes and connect on demand
   * Web server on each relay reverse-proxies the entire root hierarchy to the main server
-  * Tasks to automate on relay:
-    * Install dependencies (webserver, icecast)
-    * Supress Logging in Webserver and icecast **TODO/FIXME**: Still haven't manage to reliably suppress icecast logging wtf
-    * Configure webserver for Letsencrypt and reverse proxy
-    * Configure webserver cert stealing for icecast
-    * Configure icecast (passwords, listener, certificate, relay)
-    * Prometheus
-  * **TODO/FIXME:** Currently the CDN is one server. How does Apache *MDomain* work for a DNS round robin?
+  * **TODO:** Tried to implement something using *mod_rewrite* on top of *mod_md* to support DNS round robin. Observe behaviour.
