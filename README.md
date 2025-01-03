@@ -62,7 +62,7 @@ https://github.com/mschmitt/radiostation-delivery, https://github.com/mschmitt/r
     * **FIXME**: Instead of the old "unknown" Javascript dance, `he.js` throws the entire script away if it encounters an empty metadata object.
   * Icecast systemd unit modified (by default drop-in) to steal the MDomain SSL certificate from Apache
   * Periodically probe Metadata from Stream and save the JSON object for insertion into the player page.
-    * **FIXME**: Emty metadata object is *not* a safe fallback. (See above re. `he.js`)
+    * **FIXME**: Empty metadata object is *not* a safe fallback. (See above re. `he.js`)
 
 ## CDN
 
