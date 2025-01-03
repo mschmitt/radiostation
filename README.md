@@ -51,7 +51,7 @@ https://github.com/mschmitt/radiostation-liquidsoap
     * Embeds Metadata into Stream on track changes
     * **TODO**: Liquidsoap's randomness doesn't feel sufficiently random. Maybe hard-randomize the playlist on every export? But only if we can define and implement criteria for what we consider "random enough".
  
-## Delivery
+## Player
 
 https://github.com/mschmitt/radiostation-delivery, https://github.com/mschmitt/radiostation-website
 
@@ -64,7 +64,9 @@ https://github.com/mschmitt/radiostation-delivery, https://github.com/mschmitt/r
   * Periodically probe Metadata from Stream and save the JSON object for insertion into the player page.
     * **FIXME**: Emty metadata object is *not* a safe fallback. (See above re. `he.js`)
 
-## TODO / DRAFT: Scalability / independence from my shared infrastructure
+## CDN
+
+https://github.com/mschmitt/radiostation-cdn
 
 * Notes on resource usage:
   * Bandwidth: 112 kbps per listener = 100 Mbps for almost 1000 listeners
@@ -72,14 +74,15 @@ https://github.com/mschmitt/radiostation-delivery, https://github.com/mschmitt/r
   * CPU: Less than 1 core for Vorbis encoding
   * RAM: Unclear
 
-* An architecture that has a reliable principal backend but disposable frontends:
-  * *${domain}* served by relays only, former single server turns into a hidden principal server, *radio.${domain}*
+* Relay architecture
+  * *${domain}* served by icecast relays only, former single server turns into a hidden icecast principal server, *radio.${domain}*
   * Relays are semi-disposable VPSes and connect on demand
   * Web server on each relay reverse-proxies the entire root hierarchy to the main server
   * Tasks to automate on relay:
     * Install dependencies (webserver, icecast)
-    * Supress Logging in Webserver and icecast
-    * Configure webserver for Letsencrypt and reverse proxy (read back up on how I previously did this in a DNS Round Robin - but let's not prematurely optimize for this)
+    * Supress Logging in Webserver and icecast **TODO/FIXME**: Still haven't manage to reliably suppress icecast logging wtf
+    * Configure webserver for Letsencrypt and reverse proxy
     * Configure webserver cert stealing for icecast
     * Configure icecast (passwords, listener, certificate, relay)
     * Prometheus
+  * **TODO/FIXME:** Currently the CDN is one server. How does Apache *MDomain* work for a DNS round robin?
