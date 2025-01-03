@@ -70,9 +70,10 @@ https://github.com/mschmitt/radiostation-cdn
 
 * Notes on resource usage:
   * Bandwidth: 112 kbps per listener = 100 Mbps for almost 1000 listeners
-  * Storage: 1.5 GB for 200 MP3s = 8 GB for 1000 MP3s
-  * CPU: Less than 1 core for Vorbis transcoding
-  * RAM: Unclear
+  * Not relevant for anything in the current implementation:
+    * Storage: 1.5 GB for 200 MP3s = 8 GB for 1000 MP3s
+    * CPU: Less than 1 core for Vorbis transcoding
+    * RAM: Unclear
 
 * Relay architecture
   * *${domain}* served by icecast relays only, former single server turns into a hidden icecast main server, *radio.${domain}*
