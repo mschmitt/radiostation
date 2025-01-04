@@ -79,4 +79,4 @@ https://github.com/mschmitt/radiostation-cdn
   * *${domain}* served by icecast relays only, former single server turns into a hidden icecast main server, *radio.${domain}*
   * Relays are semi-disposable VPSes and connect on demand
   * Web server on each relay reverse-proxies the entire root hierarchy to the main server
-  * **TODO:** Tried to implement something using *mod_rewrite* on top of *mod_md* to support DNS round robin. Observe behaviour.
+  * Opted for *acme-tiny* instead of *mod_md* to better support cluster operation towards Letsencrypt
