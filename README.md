@@ -85,4 +85,4 @@ https://github.com/mschmitt/radiostation-cdn
 
 https://github.com/mschmitt/radiostation-lightningtalk
 
-* Prepared, but never given.
+* Prepared, but not given yet.
