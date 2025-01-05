@@ -80,3 +80,9 @@ https://github.com/mschmitt/radiostation-cdn
   * Relays are semi-disposable VPSes and connect on demand
   * Web server on each relay reverse-proxies the entire root hierarchy to the main server
   * Opted for *acme-tiny* instead of *mod_md* to better support cluster operation towards Letsencrypt
+
+## Public Relations
+
+https://github.com/mschmitt/radiostation-lightningtalk
+
+* Prepared, but never given.
